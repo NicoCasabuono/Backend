@@ -5,12 +5,11 @@ class ProductManager {
         this.path = filePath;
         this.products = [];
         this.currentId = 1;
-        this.loadProducts();
     }
 
-    loadProducts() {
+    async loadProducts() {
         try {
-            const data = fs.readFileSync(this.path, 'utf-8');
+            const data = await fs.readFile(this.path, 'utf-8');
             this.products = JSON.parse(data);
             if (this.products.length > 0) {
                 this.currentId = Math.max(...this.products.map(product => product.id)) + 1;
@@ -20,45 +19,47 @@ class ProductManager {
         }
     }
 
-    saveProducts() {
-        fs.writeFileSync(this.path, JSON.stringify(this.products, null, 2), 'utf-8');
+    async saveProducts() {
+        await fs.writeFile(this.path, JSON.stringify(this.products, null, 2), 'utf-8');
     }
 
-    addProduct(productData) {
+    async addProduct(productData) {
         const product = {
             id: this.currentId,
             ...productData,
         };
         this.products.push(product);
         this.currentId++;
-        this.saveProducts();
+        await this.saveProducts();
     }
 
-    getProducts() {
+    async getProducts() {
+        await this.loadProducts();
         return this.products;
     }
 
-    getProductById(productId) {
+    async getProductById(productId) {
+        await this.loadProducts();
         return this.products.find(product => product.id === productId);
     }
 
-    updateProduct(productId, updatedProductData) {
+    async updateProduct(productId, updatedProductData) {
         const index = this.products.findIndex(product => product.id === productId);
         if (index !== -1) {
             this.products[index] = {
                 ...this.products[index],
                 ...updatedProductData,
-                id: productId, // Garantiza que el ID no cambie
+                id: productId,
             };
-            this.saveProducts();
+            await this.saveProducts();
         }
     }
 
-    deleteProduct(productId) {
+    async deleteProduct(productId) {
         const index = this.products.findIndex(product => product.id === productId);
         if (index !== -1) {
             this.products.splice(index, 1);
-            this.saveProducts();
+            await this.saveProducts();
         }
     }
 }
