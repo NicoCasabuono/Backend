@@ -1,10 +1,11 @@
 const express = require('express');
+const path = require('path');
 const ProductManager = require('./ProductManager');
 
 const app = express();
 const port = 8080;
 
-const productManager = new ProductManager('productos.json'); // Reemplaza 'productos.json' con el nombre de tu archivo de datos
+const productManager = new ProductManager('productos.json'); 
 
 app.use(express.json());
 

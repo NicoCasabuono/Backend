@@ -1,10 +1,12 @@
 const fs = require('fs').promises;
+const path = require('path');
 
 class ProductManager {
     constructor(filePath) {
-        this.path = filePath;
+        this.path = path.join(__dirname, '..', 'DB', filePath);
         this.products = [];
         this.currentId = 1;
+        this.loadProducts();
     }
 
     async loadProducts() {
