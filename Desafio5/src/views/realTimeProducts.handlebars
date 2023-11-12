@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Real Time Products</title>
+</head>
+<body>
+    <h1>Real Time Products</h1>
+    <form id="productForm" action="/product" method="post">
+        <label for="name">Product Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price">
+        <input type="submit" value="Create Product">
+    </form>
+    <ul id="productList">
+        <!-- Here, display the list of products -->
+        <!-- This will be dynamically updated using websockets -->
+    </ul>
+    <script>
+        const socket = io();
+
+        socket.on('updateProducts', (products) => {
+            const productList = document.getElementById('productList');
+            productList.innerHTML = ''; // Clear the list before updating
+
+            products.forEach(product => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${product.name} - $${product.price}`;
+                productList.appendChild(listItem);
+            });
+        });
+
+        const productForm = document.getElementById('productForm');
+        productForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const price = document.getElementById('price').value;
+
+            // Send the new product data to the server
+            socket.emit('newProduct', { name, price });
+
+            // Clear the form fields after submitting
+            document.getElementById('name').value = '';
+            document.getElementById('price').value = '';
+        });
+    </script>
+</body>
+</html>
