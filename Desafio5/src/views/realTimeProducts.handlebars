@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Real Time Products</title>
+    <link rel="stylesheet" href="/public/css/styles.css"> 
 </head>
 <body>
     <h1>Real Time Products</h1>
@@ -13,9 +14,11 @@
         <input type="number" id="price" name="price">
         <input type="submit" value="Create Product">
     </form>
-    <ul id="productList">
-        <!-- Here, display the list of products -->
-        <!-- This will be dynamically updated using websockets -->
+    <h1>Lista de Productos en Tiempo Real</h1>
+    <ul>
+      {{#each products}}
+        <li>{{this.name}} - {{this.price}}</li>
+      {{/each}}
     </ul>
     <script>
         const socket = io();

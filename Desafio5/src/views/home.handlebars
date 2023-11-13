@@ -2,13 +2,15 @@
 <html>
 <head>
   <title>Lista de Productos</title>
+  <link rel="stylesheet" href="/public/css/styles.css"> 
+
 </head>
 <body>
   <h1>Lista de Productos</h1>
   <ul>
-    {{#each products}}
-      <li>{{this}}</li>
-    {{/each}}
-  </ul>
+  {{#each products}}
+    <li>{{this.name}} - {{this.price}}</li>
+  {{/each}}
+</ul>
 </body>
 </html>
