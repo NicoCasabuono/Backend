@@ -38,5 +38,10 @@
     "id": 8,
     "name": "prueba 1",
     "price": 5645
+  },
+  {
+    "id": 9,
+    "name": "carne",
+    "price": 3
   }
 ]
