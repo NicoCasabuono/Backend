@@ -1,0 +1,151 @@
+[
+  {
+    "id": "1",
+    "title": "Producto 1",
+    "description": "Descripción del producto 1",
+    "code": "P001",
+    "price": 10.99,
+    "status": true,
+    "stock": 100,
+    "category": "Electrónica",
+    "thumbnails": [
+      "imagen1.jpg",
+      "imagen2.jpg"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Producto 2",
+    "description": "Descripción del producto 2",
+    "code": "P002",
+    "price": 19.99,
+    "status": true,
+    "stock": 50,
+    "category": "Ropa",
+    "thumbnails": [
+      "imagen3.jpg"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Producto 3",
+    "description": "Descripción del producto 3",
+    "code": "P003",
+    "price": 5.99,
+    "status": true,
+    "stock": 200,
+    "category": "Hogar",
+    "thumbnails": [
+      "imagen4.jpg",
+      "imagen5.jpg"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Producto 4",
+    "description": "Descripción del producto 4",
+    "code": "P004",
+    "price": 15.49,
+    "status": true,
+    "stock": 75,
+    "category": "Electrónica",
+    "thumbnails": [
+      "imagen6.jpg"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Producto 5",
+    "description": "Descripción del producto 5",
+    "code": "P005",
+    "price": 12.99,
+    "status": true,
+    "stock": 120,
+    "category": "Deporte",
+    "thumbnails": [
+      "imagen7.jpg",
+      "imagen8.jpg"
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Producto 6",
+    "description": "Descripción del producto 6",
+    "code": "P006",
+    "price": 29.99,
+    "status": true,
+    "stock": 30,
+    "category": "Electrónica",
+    "thumbnails": [
+      "imagen9.jpg"
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Producto 7",
+    "description": "Descripción del producto 7",
+    "code": "P007",
+    "price": 8.99,
+    "status": true,
+    "stock": 90,
+    "category": "Ropa",
+    "thumbnails": [
+      "imagen10.jpg"
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Producto 8",
+    "description": "Descripción del producto 8",
+    "code": "P008",
+    "price": 7.99,
+    "status": true,
+    "stock": 150,
+    "category": "Hogar",
+    "thumbnails": [
+      "imagen11.jpg",
+      "imagen12.jpg"
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Producto 9",
+    "description": "Descripción del producto 9",
+    "code": "P009",
+    "price": 11.99,
+    "status": true,
+    "stock": 60,
+    "category": "Electrónica",
+    "thumbnails": [
+      "imagen13.jpg"
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Producto 10",
+    "description": "Descripción del producto 10",
+    "code": "P010",
+    "price": 17.99,
+    "status": true,
+    "stock": 80,
+    "category": "Deporte",
+    "thumbnails": [
+      "imagen14.jpg",
+      "imagen15.jpg"
+    ]
+  },
+  {
+    "title": "Nuevo Producto",
+    "description": "Modificado con PUT",
+    "code": "P012",
+    "price": 6.66,
+    "status": true,
+    "stock": 666,
+    "category": "Demonologia",
+    "thumbnails": [
+      "imagen28.jpg",
+      "imagen666.jpg"
+    ],
+    "id": "12"
+  }
+]

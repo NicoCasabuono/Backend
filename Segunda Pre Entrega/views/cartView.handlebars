@@ -1,0 +1,14 @@
+{{!-- Extiende el diseño principal --}}
+{{#extend 'layout/main'}}
+  {{!-- Define el contenido específico de la vista del carrito --}}
+  {{#content 'content'}}
+    <h1>Carrito de Compras</h1>
+    {{#each cart.products}}
+      <div>
+        <h2>{{this.name}}</h2>
+        <p>Cantidad: {{this.quantity}}</p>
+        <!-- Otros detalles del producto en el carrito -->
+      </div>
+    {{/each}}
+  {{/content}}
+{{/extend}}
