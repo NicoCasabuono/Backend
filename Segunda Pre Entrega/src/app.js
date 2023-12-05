@@ -62,7 +62,7 @@ app.engine(
 
 // Configurar la carpeta de vistas
 app.set('view engine', 'handlebars');
-app.set('views', path.join(currentDir, 'views'));
+app.set('views', path.join(currentDir, '../views/layout/main.handlebars'));
 
 // Rutas para productos
 app.use('/api/products', productsRouter);
