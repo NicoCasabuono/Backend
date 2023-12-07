@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{#if title}}{{title}}{{else}}Mi Tienda{{/if}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Backend - Pre Entrega</title>
 </head>
 <body>
-  {{!-- Contenido del cuerpo --}}
-  {{{content}}}
+    <header>
+        <h1>Curso Backend - Pre Entrega</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/api/products">Productos</a></li>
+                <li><a href="/api/carts">Carritos</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  {{!-- Puedes incluir scripts u otros elementos si es necesario --}}
+    <main>
+        {{{body}}}
+    </main>
+
+    <footer>
+        <p>© 2023 Curso Backend</p>
+    </footer>
 </body>
 </html>
 

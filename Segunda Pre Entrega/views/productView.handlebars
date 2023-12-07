@@ -1,12 +1,28 @@
-{{!-- Extiende el diseño principal --}}
-{{#extend 'layout/main'}}
-  {{!-- Define el contenido específico de la vista de productos --}}
-  {{#content 'content'}}
-    <h1>Detalles del Producto</h1>
-    <h2>{{product.name}}</h2>
-    <p>{{product.description}}</p>
-    <p>Precio: ${{product.price}}</p>
-    <!-- Otros detalles del producto -->
-    <button onclick="addToCart('{{product._id}}')">Agregar al carrito</button>
-  {{/content}}
-{{/extend}}
+{{!< layout/main}}
+
+<div>
+  <h1>Lista de Productos</h1>
+  {{#each products}}
+    <div>
+      <h2>{{title}}</h2>
+      <p>{{description}}</p>
+      <p>Precio: {{price}}</p>
+      <p>Categoría: {{category}}</p>
+      <p>Disponibilidad: {{availability}}</p>
+      <form action="/api/carts/{{cartId}}" method="POST">
+        <input type="hidden" name="productId" value="{{_id}}">
+        <label for="quantity">Cantidad:</label>
+        <input type="number" name="quantity" value="1" min="1">
+        <button type="submit">Agregar al carrito</button>
+      </form>
+    </div>
+  {{/each}}
+</div>
+
+{{#if hasPrevPage}}
+  <a href="{{prevLink}}">Página anterior</a>
+{{/if}}
+
+{{#if hasNextPage}}
+  <a href="{{nextLink}}">Página siguiente</a>
+{{/if}}

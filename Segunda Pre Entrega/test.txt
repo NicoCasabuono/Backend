@@ -1,0 +1,29 @@
+// Generar productos
+//const productos = [];
+//for (let i = 0; i < 200; i++) {
+  //productos.push({
+  //  _id: i + 1,
+  //  title: `Producto ${i + 1}`,
+  //  description: `Descripción del Producto ${i + 1}`,
+  //  code: `CODE${i + 1}`,
+  //  price: Math.random() * 100,
+  //  status: 'active',
+  //  stock: Math.floor(Math.random() * 100),
+  //  category: `Categoria${i % 5 + 1}`,
+  //  thumbnail: `url-de-la-imagen-${i + 1}.jpg`,
+  //});
+//}
+
+// Insertar los productos en la base de datos
+//try {
+//  await Product.insertMany(productos);
+//  console.log('Productos insertados en la base de datos.');
+//} catch (error) {
+//  console.error('Error al insertar productos:', error);
+//} finally {
+  // Cerrar la conexión a la base de datos al finalizar
+ // await mongoose.connection.close();
+//}
+
+
+/////

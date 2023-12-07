@@ -4,9 +4,9 @@ import { Product } from '../models/products.mongoose.js';
 const router = express.Router();
 
 // Ruta: GET /api/products
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
   try {
-    const { limit = 10, page = 1, sort, query } = req.query;
+    const { limit = 5, page = 1, sort, query } = req.query;
 
     const filters = {};
     if (query) {
@@ -36,8 +36,8 @@ router.get('/', async (req, res) => {
       page: parseInt(page),
       hasPrevPage: page > 1,
       hasNextPage: page < totalPages,
-      prevLink: page > 1 ? `/api/products?limit=${limit}&page=${page - 1}&sort=${sort}&query=${query}` : null,
-      nextLink: page < totalPages ? `/api/products?limit=${limit}&page=${page + 1}&sort=${sort}&query=${query}` : null,
+      prevLink: page > 1 ? `/products?limit=${limit}&page=${page - 1}&sort=${sort}&query=${query}` : null,
+      nextLink: page < totalPages ? `/products?limit=${limit}&page=${page + 1}&sort=${sort}&query=${query}` : null,
     };
 
     res.json(response);

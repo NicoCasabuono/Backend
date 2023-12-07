@@ -1,5 +1,5 @@
 import { Schema,model,mongoose } from 'mongoose';
-import { Product } from './products.mongoose.js';
+
 
 const cartSchema = new mongoose.Schema({
   _id: {type: String, require:true},
