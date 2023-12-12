@@ -25,7 +25,8 @@ router.get('/', async (req, res, next) => {
     const products = await Product.find(filters)
       .sort(sortOptions)
       .skip(startIndex)
-      .limit(parseInt(limit)).lean();
+      .limit(parseInt(limit))
+      .lean();
 
     const response = {
       status: 'success',
