@@ -1,0 +1,50 @@
+import { productService } from '../../dao/services/product.service.js'
+
+export const HandleGetAll = async (req, res, next) => {
+  try {
+    const { page = 1, limit = 10 } = req.query
+    const result = await productService.getAll(page, limit)
+    res.status(result.status).json(result)
+  } catch (error) {
+    next(error)
+  }
+}
+export const HandleGetOne = async (req, res, next) => {
+  try {
+    const { pid } = req.params
+    const result = await productService.getOne(pid)
+    res.status(result.status).json(result)
+  } catch (error) {
+    next(error)
+  }
+}
+export const HandleCreate = async (req, res, next) => {
+  try {
+    const { title, description, code, price, status, stock, category, thumbnails } = req.body
+    const obj = { title, description, code, price, status, stock, category, thumbnails }
+    const result = await productService.create(obj)
+    res.status(result.status).json(result)
+  } catch (error) {
+    next(error)
+  }
+}
+export const HandleUpdate = async (req, res, next) => {
+  try {
+    const { pid } = req.params
+    const { title, description, code, price, status, stock, category, thumbnails } = req.body
+    const obj = { title, description, code, price, status, stock, category, thumbnails }
+    const result = await productService.udpate(pid, obj)
+    res.status(result.status).json(result)
+  } catch (error) {
+    next(error)
+  }
+}
+export const HandleDelete = async (req, res, next) => {
+  try {
+    const { pid } = req.params
+    const result = await productService.delete(pid)
+    res.status(result.status).json(result)
+  } catch (error) {
+    next(error)
+  }
+}
