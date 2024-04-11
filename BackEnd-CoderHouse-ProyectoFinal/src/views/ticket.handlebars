@@ -1,0 +1,36 @@
+<div>
+    <br>
+    <button><a href="/home">Home</a></button>
+    <br>
+    <br>
+    {{#if Ticketcreate}}
+        <h1>Purchase successful!</h1>
+        <h2>Ticket N°: {{Ticketcreate.code}} </h2>
+        <div>
+            <h4>Purchase_datetime: {{Ticketcreate.purchase_datetime}}</h4>
+            <h4>Products:</h4>
+            {{#each Ticketcreate.products}}
+                <p>Title: {{this.title}}, Price: {{this.price}}, Quantity: {{this.quantity}}</p>
+                <br>
+            {{/each }}
+            <h4>Amount: {{Ticketcreate.amount}}</h4>
+            <h4>Purchaser: {{Ticketcreate.purchaser}}</h4>
+        </div>
+        <br>
+
+    {{/if}}
+    {{#if cartProducts}}
+        <h3>Products whithout stock (still in your cart)</h3>
+        {{#each cartProducts}}
+            <div>
+                <h4>{{this.product.title}}</h4>
+                <p>price: {{this.product.price}}</p>
+                <p>quantity: {{this.quantity}} </p>
+            </div>
+            <br>
+        {{/each }} 
+    {{/if}}
+    <br>
+    <br>
+</div>
+
